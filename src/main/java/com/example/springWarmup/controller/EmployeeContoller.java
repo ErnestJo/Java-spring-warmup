@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/employee")
+@RequestMapping("/api/employees")
 public class EmployeeContoller {
     private EmployeeService employeeService;
 
@@ -21,7 +21,7 @@ public class EmployeeContoller {
         this.employeeService = employeeService;
     }
 
-    @PostMapping("employee")
+    @PostMapping()
     public ResponseEntity<Employee> saveEmployee(@RequestBody Employee employee){
         return new ResponseEntity<>(employeeService.saveEmployee(employee), HttpStatus.CREATED);
     }
